@@ -5,9 +5,24 @@ import sys
 
 if sys.version_info > (3, 0):
     raw_input = input;
+    
+txtFileName = '';
+txtDestPath = '';
 
-txtFileName = raw_input("원본 코드 경로/이름: ");
-txtDestPath = raw_input("대상 화일 경로/이름: ");
+def efp(x = '', sep = '', end = ''):
+    return;
+def efi(x = ''):
+    return;
+
+if(len(sys.argv) >= 2):
+    txtFileName = sys.argv[1];
+    txtDestPath = sys.argv[2];
+    
+    print = efp;
+    input = efi;
+else:
+    txtFileName = raw_input("원본 코드 경로/이름: ");
+    txtDestPath = raw_input("대상 화일 경로/이름: ");
 
 txtCode = open(txtFileName, "r", encoding="utf-8").read();
 
