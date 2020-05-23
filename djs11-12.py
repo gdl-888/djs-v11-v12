@@ -20,6 +20,11 @@ if(len(sys.argv) >= 2):
     
     print = efp;
     input = efi;
+    
+    try:
+        raw_input = efi;
+    except:
+        pass;
 else:
     txtFileName = raw_input("원본 코드 경로/이름: ");
     txtDestPath = raw_input("대상 화일 경로/이름: ");
