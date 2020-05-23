@@ -104,8 +104,8 @@ print("setGame => setActivity로...");
 txtCode = re.sub('[.]setGame\s{0,}[(]\s{0,}(\'|"|`)(?P<is>(?:(?!(\'|"|`)).)+)(\'|"|`)\s{0,}[)]', '.setActivity(`\g<is>`)', txtCode);
 txtCode = re.sub('[.]setGame\s{0,}[(]\s{0,}(\'|"|`)(?P<is>(?:(?!(\'|"|`)).)+)(\'|"|`)\s{0,}[,]\s{0,}(\'|"|`)(?P<it>(?:(?!(\'|"|`)).)+)(\'|"|`)\s{0,}[)]', '.setActivity(`\g<is>`, { url: "\g<it>", type: "STREAMING" })', txtCode);
 
-x = input("\r\n변환이 완료되었으며 저장하기 전에 경고: 대상 화일이 있으면 겹쳐쓰기됩니다. 계속하려면 리턴글쇠를 누르십시오. . . ");
-f = open(txtDestPath, "w", encoding='utf-8');
+x = input("\r\n변환이 완료되었으며 저장하기 전에 경고: 대상 화일이 있으면 오류가 발생할 수 있읍니다. 계속하려면 리턴글쇠를 누르십시오. . . ");
+f = open(txtDestPath, "w+", encoding='utf-8');
 f.write(txtCode);
 f.close();
 
